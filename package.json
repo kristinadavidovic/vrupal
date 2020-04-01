@@ -1,0 +1,16 @@
+{
+  "name": "vrupal",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "Kristina Davidovic <kristina.davidovic@agiledrop.com>",
+  "private": true,
+  "dependencies": {
+    "vue": "^2.6.9",
+    "vuex": "^3.1.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
