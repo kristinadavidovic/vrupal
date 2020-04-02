@@ -1,0 +1,32 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+}
+
+// Class visually-hidden must be styled manually because system CSS is disabled in theme.info.yml
+// Styles copied from Drupals hidden.module.css
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    word-wrap: normal;
+
+    // Also for focusable class (for accessibility reasons)
+    &.focusable {
+        &:focus {
+            position: static !important;
+            clip: auto;
+            overflow: visible;
+            height: auto;
+            width: auto;
+        }
+    }
+}

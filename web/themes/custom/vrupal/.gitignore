@@ -12,8 +12,6 @@
 /web/sites/*/settings.local.php
 /web/sites/*/development.services.yml
 /web/sites/development.services.yml
-/web/sites/default/private_files/.htaccess
-/web/sites/default/private_files/webform/*
 /gulpconfig.local.js
 /gulpconfig.local.json
 
@@ -31,6 +29,9 @@ node_modules
 
 # Ignore npm debug
 npm-debug.log
+
+# Ignore built files, but keep fonts
+/web/themes/custom/trio_theme/assets/
 
 # Ignore content sync settings
 .dev/mysql_dumps/
@@ -56,8 +57,7 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-/web/themes/custom/vrupal/assets/*
-/web/themes/custom/vrupal/assets/css/*
-/web/themes/custom/vrupal/assets/js/*
-/web/themes/custom/vrupal/assets/img/*
-.editorconfig
+/web/themes/custom/compo/assets/*
+/web/themes/custom/compo/assets/css/*
+/web/themes/custom/compo/assets/js/*
+/web/themes/custom/compo/assets/img/*
