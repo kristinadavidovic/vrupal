@@ -1,0 +1,22 @@
+uuid: 61037434-eb5d-453b-bd4d-e8cd78e78681
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - vrupal
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: vrupal_messages
+theme: vrupal
+region: header
+weight: -3
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

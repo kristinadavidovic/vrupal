@@ -7,12 +7,14 @@ core: 8.x
 base theme: bartik
 
 regions:
-  header: Header
-  highlighted: Highlighted
-  featured_top: 'Featured top'
-  content: Content
-  footer: Footer
+  header: 'Header'
+  feature_top: 'Featured top'
+  content: 'Content'
+  footer: 'Footer'
   hidden: 'Hidden region'
 
 libraries:
   - vrupal/assets
+
+libraries-override:
+  bartik/global-styling: false

@@ -1,0 +1,22 @@
+uuid: 08f122f4-51a9-47eb-8f1b-12972a6e6efd
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - vrupal
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: vrupal_help
+theme: vrupal
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

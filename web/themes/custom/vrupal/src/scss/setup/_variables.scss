@@ -1,0 +1,47 @@
+// colors
+$color-white: #fff;
+$color-black: #000;
+
+$color-vue-blue-dark: #35495d;
+$color-vue-blue: #2973b7;
+$color-vue-dark: #273849;
+$color-vue-green: #42b983;
+$color-vue-red: #d63200;
+
+$color-drupal-blue-dark: #064771;
+$color-drupal-blue: #0678be;
+
+$gradient-vue-green-drupal-blue-dark: linear-gradient(
+    to right top,
+    #42b983,
+    #009f92,
+    #008295,
+    #00658a,
+    #064771
+);
+$gradient-drupal-blue-vue-green: linear-gradient(
+    to right,
+    #0678be,
+    #008dc3,
+    #009fb7,
+    #00aea0,
+    #42b983
+);
+$gradient-drupal-blue-dark01-drupal-blue-dark03: linear-gradient(
+    225deg,
+    rgba(41, 115, 183, 0.3) 0%,
+    rgba(41, 115, 183, 0.1) 100%
+);
+
+$gradient-vue-green-vue-blue: linear-gradient(
+    to right bottom,
+    #42b983,
+    #00ada0,
+    #009db7,
+    #0089c0,
+    #2973b7
+);
+
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Baloo+2&display=swap');
+$font-main: 'Baloo 2', serif;
