@@ -1,21 +1,20 @@
-uuid: 38ccebd3-b38a-46bc-b884-457879011052
+uuid: 924e15e6-2f00-479d-806c-91afd370f2c6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
-    - node.type.article
+    - field.storage.paragraph.field_feature
+    - paragraphs.paragraphs_type.feature
     - paragraphs.paragraphs_type.features
-    - paragraphs.paragraphs_type.text
   module:
     - entity_reference_revisions
-id: node.article.field_paragraphs
-field_name: field_paragraphs
-entity_type: node
-bundle: article
-label: Paragraphs
+id: paragraph.features.field_feature
+field_name: field_feature
+entity_type: paragraph
+bundle: features
+label: Feature
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -24,16 +23,15 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      text: text
-      features: features
+      feature: feature
     target_bundles_drag_drop:
-      text:
-        enabled: true
-        weight: 2
       feature:
-        weight: 4
-        enabled: false
-      features:
         enabled: true
+        weight: 4
+      features:
         weight: 5
+        enabled: false
+      text:
+        weight: 6
+        enabled: false
 field_type: entity_reference_revisions

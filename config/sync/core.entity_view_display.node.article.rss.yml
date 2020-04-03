@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.rss
+    - field.field.node.article.field_header_background
     - field.field.node.article.field_paragraphs
+    - field.field.node.article.field_title_description
     - node.type.article
   module:
     - user
@@ -19,4 +21,6 @@ content:
     weight: 100
     region: content
 hidden:
+  field_header_background: true
   field_paragraphs: true
+  field_title_description: true
