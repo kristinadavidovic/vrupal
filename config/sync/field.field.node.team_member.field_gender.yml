@@ -1,0 +1,21 @@
+uuid: fdfc3514-9813-481f-872a-8c891662a330
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gender
+    - node.type.team_member
+  module:
+    - options
+id: node.team_member.field_gender
+field_name: field_gender
+entity_type: node
+bundle: team_member
+label: Gender
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

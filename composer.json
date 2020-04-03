@@ -19,6 +19,7 @@
         "drupal/adminimal_admin_toolbar": "^1.10",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
+        "drupal/paragraphs": "^1.11",
         "drupal/thunder_admin": "^3.2",
         "drupal/twig_tweak": "^2.5",
         "drush/drush": "^10.2"

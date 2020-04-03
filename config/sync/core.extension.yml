@@ -3,6 +3,7 @@ module:
   admin_toolbar_tools: 0
   adminimal_admin_toolbar: 0
   automated_cron: 0
+  basic_auth: 0
   big_pipe: 0
   block: 0
   block_content: 0
@@ -17,10 +18,12 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  hal: 0
   help: 0
   history: 0
   image: 0
@@ -33,7 +36,9 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
+  rest: 0
   search: 0
+  serialization: 0
   shortcut: 0
   system: 0
   taxonomy: 0
@@ -45,6 +50,7 @@ module:
   views_ui: 0
   menu_link_content: 1
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   stable: 0
