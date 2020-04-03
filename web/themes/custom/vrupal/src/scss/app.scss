@@ -1,5 +1,20 @@
-// Setup
+// fonts
 @import "setup/fonts";
+
+// setup
+@import "setup/normalize";
 @import "setup/variables";
 
+// mixins
+@import "mixins/mixins";
+
 @import "setup/base-styles";
+
+// elements
+@import "elements/container";
+
+// content
+@import "content/article";
+
+// paragraph
+@import "paragraph/paragraph";

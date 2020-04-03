@@ -1,0 +1,51 @@
+.node-article__header {
+    position: relative;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    height: 40vh;
+    margin-bottom: 50px;
+}
+
+.node-article__header-image {
+    grid-column: 1;
+    grid-row: 1;
+    height: 100%;
+    background-color: $color-vue-green;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $gradient-vue-green-drupal-blue-dark;
+        opacity: 0.8;
+
+    }
+}
+
+.node-article__header-text {
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+
+    .container {
+        height: 100%;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.node-article__title {
+    display: block;
+    width: 100%;
+}
+
+.node-article__title-description {
+    color: $color-white;
+    font-size: 18px;
+}

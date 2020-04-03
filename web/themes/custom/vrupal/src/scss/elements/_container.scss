@@ -3,5 +3,17 @@
     align-items: flex-end;
     flex-flow: row wrap;
     margin: 0 auto;
-    max-width: 80vw;
+    width: 86vw;
+
+    @include md {
+        width: 84vw;
+    }
+
+    @include lg {
+        width: 78vw;
+    }
+
+    @include xlg {
+        width: 68vw;
+    }
 }

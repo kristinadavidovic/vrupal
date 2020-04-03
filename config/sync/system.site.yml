@@ -1,11 +1,11 @@
 uuid: 6af764b2-d17c-46db-9ff9-263a8022c872
-name: 'V r u p a l'
+name: Drue
 mail: kristina.davidovic@agildrop.com
-slogan: ''
+slogan: 'Drupal + Vue = Drue'
 page:
   403: ''
   404: ''
-  front: /node
+  front: /node/62
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
