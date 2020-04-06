@@ -5,21 +5,28 @@
                 {{ sectionTitle }}
             </h2>
             <div class="team-members__filters">
-                Filters
-            </div>
-            <div class="team-members__content">
-                <div class="team-member" v-for="member in sortedMembers" :key="member.id">
-                    <div class="team-member__image">
-                        <img :src="member.image" />
-                    </div>
-                    <div class="team-memeber__info">
-                        <h3 class="team-member__name">
-                            {{ member.name }}
-                        </h3>
-                        <div class="team-memeber__role" v-html="member.role">
-                        </div>
-                    </div>
+                <div class="btn"
+                    @click.prevent="selectedFilter = null"
+                    :class="{ 'btn--active' : !selectedFilter }">
+                    Show all
                 </div>
+                <div class="btn"
+                    v-for="(role, roleId) in roles"
+                    :key="role"
+                    v-html="role"
+                    @click.prevent="selectedFilter = roleId"
+                    :class="{ 'btn--active' : selectedFilter == roleId }">
+                </div>
+            </div>
+            <div class="team-members__content" v-if="sortDefault">
+                <Member
+                    v-for="member in filtered"
+                    :key="member.nid"
+                    :image="member.image"
+                    :name="member.name"
+                    :roleId="member.roleId"
+                    :role="member.role">
+                </Member>
             </div>
         </div>
     </div>
@@ -27,9 +34,13 @@
 
 <script>
     import axios from 'axios';
+    import Member from './Member';
 
     export default {
         name: 'team-members',
+        components: {
+            Member,
+        },
         props: {
             sectionTitle: {
                 required: true,
@@ -39,17 +50,39 @@
         data() {
             return {
                 teamMembers: [],
+                roles: {},
+                sortDefault: true,
+                filterRole: false,
+                selectedFilter: '',
             };
         },
+        methods: {
+            filterMembers: function(roleId) {
+                console.log('ttt');
+
+                this.sortDefault = false;
+                this.filterRole = true;
+                return this.teamMembers.filter(el => {
+                    return el.roleId = roleId
+                });
+            },
+        },
         computed: {
-            sortedMembers: function() {
-                return this.teamMembers.sort((a, b) => a.position > b.position);
-            }
+            filtered() {
+                if (!this.selectedFilter) {
+                    return this.teamMembers.sort((a, b) => a.position > b.position);
+                }
+                return this.teamMembers.filter(item => item.roleId === this.selectedFilter);
+            },
         },
         mounted() {
             axios.get('api/team-members').then((response) => {
                 const data = response.data;
                 this.teamMembers = data;
+                data.map(e => {
+                    this.roles[e.roleId] = e.role
+                });
+
             }).catch((error) => {
                 console.log(error);
             });

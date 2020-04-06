@@ -18,6 +18,13 @@
     text-align: center;
 }
 
+.team-members__filters {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    margin-top: 50px;
+}
+
 .team-members__content {
     display: flex;
     flex-wrap: wrap;
