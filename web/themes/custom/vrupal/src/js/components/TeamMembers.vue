@@ -5,21 +5,16 @@
                 {{ sectionTitle }}
             </h2>
             <div class="team-members__filters">
-                Filters
+                <button>
+                    Show all
+                </button>
             </div>
             <div class="team-members__content">
-                <div class="team-member" v-for="member in sortedMembers" :key="member.id">
-                    <div class="team-member__image">
-                        <img :src="member.image" />
-                    </div>
-                    <div class="team-memeber__info">
-                        <h3 class="team-member__name">
-                            {{ member.name }}
-                        </h3>
-                        <div class="team-memeber__role" v-html="member.role">
-                        </div>
-                    </div>
-                </div>
+                <Member v-for="member in sortedMembers" :key="member.id"
+                    :image="member.image"
+                    :name="member.name"
+                    :role="member.role">
+                </Member>
             </div>
         </div>
     </div>
@@ -27,9 +22,13 @@
 
 <script>
     import axios from 'axios';
+    import Member from './Member';
 
     export default {
         name: 'team-members',
+        components: {
+            Member,
+        },
         props: {
             sectionTitle: {
                 required: true,
