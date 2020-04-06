@@ -1,0 +1,76 @@
+.team-members {
+    margin: 50px 0;
+
+    .container {
+        > div {
+            width: 100%;
+        }
+    }
+}
+
+.team-members__headline {
+    @include afterline;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    color: $color-vue-blue-dark;
+    text-align: center;
+}
+
+.team-members__content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.team-member {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-bottom: 50px;
+    padding: 0 25px;
+}
+
+.team-member__image,
+.team-memeber__info {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.team-member__image {
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.team-memeber__info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 15px;
+    margin-top: auto;
+    background: $gradient-vue-green-drupal-blue-dark;
+}
+
+.team-member__name {
+    @include afterline;
+    color: $color-white;
+    font-weight: bold;
+    text-align: center;
+
+    &::after {
+        width: 80px;
+        margin-top: 0;
+    }
+}
+
+.team-memeber__role {
+    display: inline-block;
+    margin-top: 10px;
+    color: $color-vue-blue-dark;
+}

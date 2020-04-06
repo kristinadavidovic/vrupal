@@ -6,7 +6,8 @@
 @import "setup/variables";
 
 // mixins
-@import "mixins/mixins";
+@import "mixins/media-queries";
+@import "mixins/after-line";
 
 @import "setup/base-styles";
 
@@ -16,5 +17,8 @@
 // content
 @import "content/article";
 
-// paragraph
-@import "paragraph/paragraph";
+// paragraphs
+@import "paragraphs/paragraph";
+
+// components
+@import "components/team-members";
