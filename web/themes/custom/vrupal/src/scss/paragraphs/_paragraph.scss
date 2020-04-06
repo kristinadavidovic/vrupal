@@ -5,21 +5,13 @@
 // text
 .paragraph--type--text {
     h2 {
+        @include afterline;
         display: flex;
         flex-direction: column;
         width: 100%;
         margin-bottom: 25px;
         color: $color-vue-blue-dark;
         font-weight: bold;
-
-        &::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            margin-top: 15px;
-            background-color: $color-vue-red;
-        }
     }
 }
 
