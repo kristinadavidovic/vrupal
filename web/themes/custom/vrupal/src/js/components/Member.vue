@@ -5,7 +5,7 @@
         </div>
         <div class="team-memeber__info">
             <h3 class="team-member__name">{{ name }}</h3>
-            <div class="team-memeber__role" v-html="role"></div>
+            <div class="team-memeber__role" v-if="role" v-html="role"></div>
         </div>
     </div>
 </template>
@@ -24,6 +24,10 @@
             },
             role: {
                 type: String,
+            },
+            roleId: {
+                type: String,
+                required: true,
             }
         },
         data() {
