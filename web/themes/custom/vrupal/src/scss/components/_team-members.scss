@@ -6,6 +6,10 @@
             width: 100%;
         }
     }
+
+    .container--large {
+        align-items: flex-start;
+    }
 }
 
 .team-members__headline {
@@ -19,23 +23,98 @@
 }
 
 .team-members__filters {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
-    margin-top: 50px;
+    max-width: 25%;
+    padding-right: 20px;
+
+    h3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 3px solid $color-vue-green;
+        font-weight: 600;
+    }
+}
+
+.team-members__filters--reset {
+    display: inline-block;
+    padding: 0 10px;
+    border: 2px solid $color-vue-blue-dark;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.team-members__filter-section {
+    & + & {
+        margin-top: 25px;
+    }
+
+    input {
+        width: 100%;
+        border: 0;
+        border-bottom: 3px solid $color-drupal-blue;
+        padding: 10px 25px;
+    }
+}
+
+.team-members__filter {
+    padding: 15px 10px;
+    color: $color-vue-dark;
+    cursor: pointer;
+
+    & + & {
+        border-top: 1px solid $color-vue-blue-dark;
+    }
+}
+
+.team-members__filter--reset {
+    font-weight: bold;
+}
+
+.team-members__filter--active {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        border-radius: 3px;
+        background-color: $color-vue-green;
+        transform: translateY(-50%) rotate(35deg);
+    }
+
+    &::before {
+        top: 50%;
+        right: 10px;
+        width: 4px;
+        height: 16px;
+    }
+
+    &::after {
+        top: 27px;
+        right: 14px;
+        height: 4px;
+        width: 9px;
+    }
+
 }
 
 .team-members__content {
     display: flex;
     flex-wrap: wrap;
+    max-width: 75%;
     padding: 50px 0;
 }
 
 .team-member {
     display: grid;
     grid-template: 1fr / 1fr;
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
     margin-bottom: 50px;
     padding: 0 25px;
 }

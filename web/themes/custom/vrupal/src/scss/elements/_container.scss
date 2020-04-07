@@ -17,3 +17,15 @@
         width: 68vw;
     }
 }
+
+.container--large {
+    width: 86vw;
+
+    @include lg {
+        width: 84vw;
+    }
+
+    @include xlg {
+        width: 78vw;
+    }
+}
