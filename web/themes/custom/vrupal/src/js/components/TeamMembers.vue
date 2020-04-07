@@ -4,21 +4,34 @@
             <h2 class="team-members__headline">
                 {{ sectionTitle }}
             </h2>
+        </div>
+        <div class="container container--large">
             <div class="team-members__filters">
-                <div class="btn"
-                    @click.prevent="selectedFilter = null"
-                    :class="{ 'btn--active' : !selectedFilter }">
-                    Show all
+                <h3>Filters
+                    <span @click.prevent="reset"
+                        class="team-members__filters--reset">
+                        Reset
+                    </span>
+                </h3>
+                <div class="team-members__filter-section">
+                    <input type="text" v-model="search" placeholder="Search ...">
                 </div>
-                <div class="btn"
-                    v-for="(role, roleId) in roles"
-                    :key="role"
-                    v-html="role"
-                    @click.prevent="selectedFilter = roleId"
-                    :class="{ 'btn--active' : selectedFilter == roleId }">
+                <div class="team-members__filter-section">
+                    <div class="team-members__filter team-members__filter--reset"
+                        @click.prevent="selectedFilter = null"
+                        :class="{ 'team-members__filter--active' : !selectedFilter }">
+                        Show all
+                    </div>
+                    <div class="team-members__filter"
+                        v-for="(role, roleId) in roles"
+                        :key="role"
+                        v-html="role"
+                        @click.prevent="selectedFilter = roleId, search = ''"
+                        :class="{ 'team-members__filter--active' : selectedFilter == roleId }">
+                    </div>
                 </div>
             </div>
-            <div class="team-members__content" v-if="sortDefault">
+            <div class="team-members__content">
                 <Member
                     v-for="member in filtered"
                     :key="member.nid"
@@ -51,28 +64,27 @@
             return {
                 teamMembers: [],
                 roles: {},
-                sortDefault: true,
-                filterRole: false,
+
                 selectedFilter: '',
+                search: '',
             };
         },
         methods: {
-            filterMembers: function(roleId) {
-                console.log('ttt');
-
-                this.sortDefault = false;
-                this.filterRole = true;
-                return this.teamMembers.filter(el => {
-                    return el.roleId = roleId
-                });
+            reset() {
+                this.search = '';
+                this.selectedFilter = '';
             },
         },
         computed: {
             filtered() {
-                if (!this.selectedFilter) {
+                if (!this.selectedFilter && this.search == '') {
                     return this.teamMembers.sort((a, b) => a.position > b.position);
                 }
-                return this.teamMembers.filter(item => item.roleId === this.selectedFilter);
+
+                return this.teamMembers.filter(item => {
+                    let regexp = new RegExp(`(?=.*${this.selectedFilter})(?=.*${this.search})`, 'gi');
+                    return item.name.match(regexp) || item.roleId.match(regexp);
+                });
             },
         },
         mounted() {
@@ -82,7 +94,6 @@
                 data.map(e => {
                     this.roles[e.roleId] = e.role
                 });
-
             }).catch((error) => {
                 console.log(error);
             });
